@@ -7,7 +7,7 @@ const CustomError = require('../errors');
 const register = async (req, res) => {
     const user = await User.create({ ...req.body });
     const token = user.createJWT()
-    res.status(StatusCodes.CREATED).json({user: { id: user._id ,name: user.name, email: user.email }, token })
+    res.status(StatusCodes.CREATED).json({ user: { id: user._id, name: user.name, email: user.email }, token })
 }
 
 //signin / login
@@ -25,7 +25,7 @@ const login = async (req, res) => {
         throw new UnauthenticatedError('Invalid Credentials')
     }
     const token = user.createJWT()
-    res.status(StatusCodes.OK).json({ user: { id: user._id ,name: user.name, email: user.email }, token })
+    res.status(StatusCodes.OK).json({ user: { id: user._id, name: user.name, email: user.email }, token })
 }
 
 //get all user 
@@ -50,7 +50,7 @@ const updateUser = async (req, res) => {
         throw new CustomError.BadRequestError('Please provide all values');
     }
     const user = await User.findOne({ _id: req.params.id });
-    
+
     const isPasswordCorrect = await user.comparePassword(oldPassword);
     if (!isPasswordCorrect) {
         throw new CustomError.UnauthenticatedError('Invalid Credentials');
@@ -62,7 +62,7 @@ const updateUser = async (req, res) => {
     await user.save();
 
     const token = user.createJWT(user);
-    res.status(StatusCodes.OK).json({ user: { name: user.name }, token });
+    res.status(StatusCodes.OK).json({ user: { id: user._id, name: user.name, email: user.email }, token });
 };
 
 //updata password

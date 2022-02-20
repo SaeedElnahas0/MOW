@@ -8,7 +8,13 @@ const createHistorical = async (req, res) => {
 }
 
 const getAllHistoricals = async (req, res) => {
-    const historicals = await Historical.find({});
+    const { name } = req.query;
+    const queryObject = {};
+    if (name) {
+        queryObject.name = { $regex: name, $options: 'i' };
+    }
+    let result = Historical.find(queryObject);
+    const historicals = await result;
     res.status(StatusCodes.OK).json({ count: historicals.length, historicals });
 };
 

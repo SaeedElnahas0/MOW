@@ -8,7 +8,15 @@ const createMuseum = async (req, res) => {
 };
 
 const getAllMuseums = async (req, res) => {
-    const museums = await Museum.find({});
+    // const museums = await Museum.find({});
+    // res.status(StatusCodes.OK).json({ count: museums.length, museums });
+    const { name } = req.query;
+    const queryObject = {};
+    if (name) {
+        queryObject.name = { $regex: name, $options: 'i' };
+    }
+    let result = Museum.find(queryObject);
+    const museums = await result;
     res.status(StatusCodes.OK).json({ count: museums.length, museums });
 };
 

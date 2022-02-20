@@ -8,7 +8,15 @@ const createSunkenMonument = async (req, res) => {
 }
 
 const getAllSunkenMonuments = async (req, res) => {
-    const sunkenMonuments = await SunkenMonument.find({});
+    // const sunkenMonuments = await SunkenMonument.find({});
+    // res.status(StatusCodes.OK).json({ count: sunkenMonuments.length, sunkenMonuments });
+    const { name } = req.query;
+    const queryObject = {};
+    if (name) {
+        queryObject.name = { $regex: name, $options: 'i' };
+    }
+    let result = SunkenMonument.find(queryObject);
+    const sunkenMonuments = await result;
     res.status(StatusCodes.OK).json({ count: sunkenMonuments.length, sunkenMonuments });
 };
 

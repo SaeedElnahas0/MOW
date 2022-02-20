@@ -8,7 +8,15 @@ const createWorldHeritage = async (req, res) => {
 }
 
 const getAllWorldHeritage = async (req, res) => {
-    const worldHeritages = await WorldHeritage.find({});
+    // const worldHeritages = await WorldHeritage.find({});
+    // res.status(StatusCodes.OK).json({ count: worldHeritages.length, worldHeritages });
+    const { name } = req.query;
+    const queryObject = {};
+    if (name) {
+        queryObject.name = { $regex: name, $options: 'i' };
+    }
+    let result = WorldHeritage.find(queryObject);
+    const worldHeritages = await result;
     res.status(StatusCodes.OK).json({ count: worldHeritages.length, worldHeritages });
 };
 

@@ -16,7 +16,7 @@ const WorldHeritageSchema = new mongoose.Schema(
             required: [true, 'Please provide World Heritage information'],
         },
         gallery: {
-            type: String,
+            type: Array,
             required: [true, 'Please provide World Heritage gallery'],
         },
     },    

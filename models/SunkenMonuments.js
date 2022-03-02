@@ -19,7 +19,7 @@ const sunkenMonumentsSchema = new mongoose.Schema(
             required: [true, 'Please provide sunken monument location'],
         },
         gallery: {
-            type: String,
+            type: Array,
             required: [true, 'Please provide sunken monument gallery'],
         },
     },    

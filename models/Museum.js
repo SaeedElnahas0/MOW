@@ -27,7 +27,7 @@ const museumSchema = new mongoose.Schema(
             required: [true, 'Please provide museum ticket'],
         },
         gallery: {
-            type: String,
+            type: Array,
             required: [true, 'Please provide museum gallery'],
         },
         instructions: {

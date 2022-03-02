@@ -12,13 +12,13 @@ const getAllWillVisit = async (req, res) => {
     res.status(StatusCodes.OK).json({ count: willVisit.length, willVisit });
 };
 
-// const getSingleSunkenMonument = async (req, res) => {
-//     const sunkenMonument = await SunkenMonument.findOne({ _id: req.params.id });
-//     if (!sunkenMonument) {
-//         throw new CustomError.NotFoundError(`No sunken monument with id : ${sunkenMonumentId}`);
-//     }
-//     res.status(StatusCodes.OK).json({ sunkenMonument });
-// };
+const getSingleWillVisit = async (req, res) => {
+    const willVisit = await WillVisit.findOne({ _id: req.params.id });
+    if (!willVisit) {
+        throw new CustomError.NotFoundError(`No will visit with id : ${willVisit}`);
+    }
+    res.status(StatusCodes.OK).json({ willVisit });
+};
 
 // const updateSunkenMonument = async (req, res) => {
 //     const sunkenMonument = await SunkenMonument.findOneAndUpdate({ _id: req.params.id }, req.body, {
@@ -43,4 +43,5 @@ const getAllWillVisit = async (req, res) => {
 module.exports = {
     createWillVisit,
     getAllWillVisit,
+    getSingleWillVisit
 }

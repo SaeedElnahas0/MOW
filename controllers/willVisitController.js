@@ -20,26 +20,6 @@ const getSingleWillVisit = async (req, res) => {
     res.status(StatusCodes.OK).json({ willVisit });
 };
 
-// const updateSunkenMonument = async (req, res) => {
-//     const sunkenMonument = await SunkenMonument.findOneAndUpdate({ _id: req.params.id }, req.body, {
-//         new: true,
-//         runValidators: true,
-//     });
-//     if (!sunkenMonument) {
-//         throw new CustomError.NotFoundError(`No sunken monument with id : ${sunkenMonumentId}`);
-//     }
-//     res.status(StatusCodes.OK).json({ msg: 'Success! Sunken Monument updated.', sunkenMonument });
-// };
-
-// const deleteSunkenMonument = async (req, res) => {
-//     const sunkenMonument = await SunkenMonument.findOne({ _id: req.params.id });
-//     if (!sunkenMonument) {
-//         throw new CustomError.NotFoundError(`No sunken monument with id : ${sunkenMonumentId}`);
-//     }
-//     await sunkenMonument.remove();
-//     res.status(StatusCodes.OK).json({ msg: 'Success! Sunken Monument removed.' });
-// };
-
 module.exports = {
     createWillVisit,
     getAllWillVisit,

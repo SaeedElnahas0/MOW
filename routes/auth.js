@@ -16,7 +16,7 @@ const storage = multer.diskStorage({
         cb(null, './profileImage')
     },
     filename: function(req, file, cb){
-        cb(null, new Date().toDateString()+file.originalname) // بيحط التاريخ واسم الفايل ال فيه الصوره      
+        cb(null, new Date().toDateString()+file.originalname) 
     }
 });
 
@@ -30,7 +30,6 @@ router.get('/', getAllUsers);
 router.get('/:id', getSingleUser);
 router.patch('/updateuser/:id',updateUser);
 router.patch('/updatephoto/:id', upload.single('myfile'),updatePhoto);
-//router.patch('/updatepassword/:id', updateUserPassword);
 router.delete('/:id', deleteUser);
 
 

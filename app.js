@@ -40,6 +40,7 @@ app.use(cors({
     origin: "*"
 }));
 app.use(xss());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get('/', (req, res) => {

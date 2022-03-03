@@ -20,6 +20,7 @@ const sunkenMonumentRouter = require('./routes/sunkenMonuments');
 const collectiblesRouter = require('./routes/collectibles');
 const worldHeritageRouter = require('./routes/worldHeritage');
 const willVisitRouter = require('./routes/willVisit');
+const visitedRouter = require('./routes/visited');
 
 // error handler
 const notFoundMiddleware = require('./middleware/not-found');
@@ -52,6 +53,7 @@ app.use('/sunkenMonuments', sunkenMonumentRouter);
 app.use('/collectibles', collectiblesRouter);
 app.use('/worldHeritage', worldHeritageRouter);
 app.use('/willVisit', willVisitRouter);
+app.use('/visited', visitedRouter);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);

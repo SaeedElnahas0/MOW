@@ -29,7 +29,7 @@ router.post('/login', login);
 router.get('/', getAllUsers);
 router.get('/:id', getSingleUser);
 router.patch('/updateuser/:id',updateUser);
-router.patch('/updatephoto/:id', upload.single('myfile'),updatePhoto);
+router.post('/addphoto/:id', upload.single('myfile'),updatePhoto);
 router.delete('/:id', deleteUser);
 
 

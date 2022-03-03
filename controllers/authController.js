@@ -65,6 +65,17 @@ const updateUser = async (req, res) => {
     res.status(StatusCodes.OK).json({ user: { id: user._id, name: user.name, email: user.email }, token });
 };
 
+const updatePhoto = async (req, res) => {
+    const user = await User.findOneAndUpdate({ _id: req.params.id }, req.body, {
+        new: true,
+        runValidators: true,
+    });
+    if (!user) {
+        throw new CustomError.NotFoundError(`No user with id : ${user}`);
+    }
+    res.status(StatusCodes.OK).json({ msg: 'Success! photo updated.' });
+};
+
 //updata password
 // const updateUserPassword = async (req, res) => {
 //     const { oldPassword, newPassword } = req.body;
@@ -95,5 +106,6 @@ module.exports = {
     getAllUsers,
     getSingleUser,
     updateUser,
+    updatePhoto,
     deleteUser
 }

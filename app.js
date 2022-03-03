@@ -1,6 +1,7 @@
 require('dotenv').config();
 require('express-async-errors');
 
+var path = require('path');
 const express = require('express');
 const app = express();
 // rest of the packages
@@ -44,6 +45,8 @@ app.use(express.json());
 app.get('/', (req, res) => {
     res.send('<h1>MOW</h1>');
 });
+
+app.use(express.static(path.join(__dirname, 'profileImage')));
 
 // routes
 app.use('/users', authRouter);

@@ -76,24 +76,6 @@ const updatePhoto = async (req, res) => {
     res.status(StatusCodes.OK).json({ msg: 'Success! photo updated.' });
 };
 
-//updata password
-// const updateUserPassword = async (req, res) => {
-//     const { oldPassword, newPassword } = req.body;
-//     if (!oldPassword || !newPassword) {
-//         throw new CustomError.BadRequestError('Please provide both values');
-//     }
-//     const user = await User.findOne({ _id: req.params.id });
-
-//     const isPasswordCorrect = await user.comparePassword(oldPassword);
-//     if (!isPasswordCorrect) {
-//         throw new CustomError.UnauthenticatedError('Invalid Credentials');
-//     }
-//     user.password = newPassword;
-
-//     await user.save();
-//     res.status(StatusCodes.OK).json({ msg: 'Success! Password Updated.' });
-// };
-
 //delete user
 const deleteUser = async (req, res) => {
     const user = await User.findByIdAndDelete({ _id: req.params.id });

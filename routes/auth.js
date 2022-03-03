@@ -32,5 +32,4 @@ router.patch('/updateuser/:id',updateUser);
 router.post('/addphoto/:id', upload.single('myfile'),updatePhoto);
 router.delete('/:id', deleteUser);
 
-
 module.exports = router;

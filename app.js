@@ -44,7 +44,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.send('<h1>MOW</h1>');
+    res.send('<h1>Saeed elnahas</h1>');
 });
 
 app.use(express.static(path.join(__dirname, 'profileImage')));

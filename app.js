@@ -20,6 +20,7 @@ const historicalRouter = require('./routes/historical');
 const sunkenMonumentRouter = require('./routes/sunkenMonuments');
 const collectiblesRouter = require('./routes/collectibles');
 const worldHeritageRouter = require('./routes/worldHeritage');
+const monumentsRouter = require('./routes/monuments');
 const willVisitRouter = require('./routes/willVisit');
 const visitedRouter = require('./routes/visited');
 
@@ -56,6 +57,7 @@ app.use('/historicals', historicalRouter);
 app.use('/sunkenMonuments', sunkenMonumentRouter);
 app.use('/collectibles', collectiblesRouter);
 app.use('/worldHeritage', worldHeritageRouter);
+app.use('/monuments', monumentsRouter);
 app.use('/willVisit', willVisitRouter);
 app.use('/visited', visitedRouter);
 

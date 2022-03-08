@@ -8,8 +8,6 @@ const createMonuments = async (req, res) => {
 };
 
 const getAllMonuments = async (req, res) => {
-    // const museums = await Museum.find({});
-    // res.status(StatusCodes.OK).json({ count: museums.length, museums });
     const { name } = req.query;
     const queryObject = {};
     if (name) {

@@ -10,10 +10,13 @@ const createSunkenMonument = async (req, res) => {
 const getAllSunkenMonuments = async (req, res) => {
     // const sunkenMonuments = await SunkenMonument.find({});
     // res.status(StatusCodes.OK).json({ count: sunkenMonuments.length, sunkenMonuments });
-    const { name } = req.query;
+    const { name, location } = req.query;
     const queryObject = {};
     if (name) {
         queryObject.name = { $regex: name, $options: 'i' };
+    }
+    if (location) {
+        queryObject.location = { $regex: location, $options: 'i' };;
     }
     let result = SunkenMonument.find(queryObject);
     const sunkenMonuments = await result;

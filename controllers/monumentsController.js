@@ -8,10 +8,13 @@ const createMonuments = async (req, res) => {
 };
 
 const getAllMonuments = async (req, res) => {
-    const { name } = req.query;
+    const { name, location } = req.query;
     const queryObject = {};
     if (name) {
         queryObject.name = { $regex: name, $options: 'i' };
+    }
+    if (location) {
+        queryObject.location = { $regex: location, $options: 'i' };;
     }
     let result = Monuments.find(queryObject);
     const monuments = await result;

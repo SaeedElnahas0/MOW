@@ -10,10 +10,13 @@ const createCollectibles = async (req, res) => {
 const getAllCollectibles = async (req, res) => {
     // const collectibles = await Collectibles.find({});
     // res.status(StatusCodes.OK).json({ count: collectibles.length, collectibles });
-    const { name } = req.query;
+    const { name, location } = req.query;
     const queryObject = {};
     if (name) {
         queryObject.name = { $regex: name, $options: 'i' };
+    }
+    if (location) {
+        queryObject.location = { $regex: location, $options: 'i' };;
     }
     let result = Collectibles.find(queryObject);
     const collectibles = await result;

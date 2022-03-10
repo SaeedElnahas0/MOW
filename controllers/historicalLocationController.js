@@ -8,10 +8,13 @@ const createHistoricalLocation = async (req, res) => {
 };
 
 const getAllHistoricalLocation = async (req, res) => {
-    const { name } = req.query;
+    const { name, location } = req.query;
     const queryObject = {};
     if (name) {
         queryObject.name = { $regex: name, $options: 'i' };
+    }
+    if (location) {
+        queryObject.location = { $regex: location, $options: 'i' };;
     }
     let result = HistoricalLocation.find(queryObject);
     const historicalLocation = await result;

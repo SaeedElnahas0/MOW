@@ -7,7 +7,19 @@ const CustomError = require('../errors');
 const register = async (req, res) => {
     const user = await User.create({ ...req.body });
     const token = user.createJWT()
-    res.status(StatusCodes.CREATED).json({ user: { id: user._id, name: user.name, email: user.email }, token })
+    res.status(StatusCodes.CREATED).json({ 
+        user: { 
+            id: user._id, 
+            name: user.name, 
+            email: user.email, 
+            age: user.age, 
+            country: user.country, 
+            gender: user.gender, 
+            job: user.job, 
+            mobile: user.mobile, 
+            address: user.address 
+        }, token 
+    })
 }
 
 //signin / login

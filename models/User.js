@@ -24,6 +24,30 @@ const userSchema = new mongoose.Schema({
         required: [true, 'Please provide password'],
         minlength: 6,
     },
+    age: {
+        type: String,
+        required: [true, 'Please provide age']
+    },
+    country: {
+        type: String,
+        required: [true, 'Please provide country']
+    },
+    gender: {
+        type: String,
+        enum: ['male', 'female'],
+    },
+    job: {
+        type: String,
+        required: [true, 'Please provide job']
+    },
+    mobile: {
+        type: String,
+        required: [true, 'Please provide mobile']
+    },
+    address: {
+        type: String,
+        required: [true, 'Please provide address']
+    },
     role: {
         type: String,
         enum: ['admin', 'user'],

@@ -4,12 +4,19 @@ require('express-async-errors');
 var path = require('path');
 const express = require('express');
 const app = express();
+const fileUpload = require("express-fileupload");
 // rest of the packages
 const rateLimiter = require('express-rate-limit');
 const helmet = require('helmet');
 const xss = require('xss-clean');
 const cors = require('cors');
-
+app.use(express.json());
+app.use(
+    fileUpload({
+      useTempFiles: true,
+    })
+  );
+  
 //connect to Database
 const connectDB = require('./db/connect');
 
@@ -43,7 +50,7 @@ app.use(cors({
 }));
 app.use(xss());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+
 
 app.get('/', (req, res) => {
     res.send('<h1>Saeed elnahas</h1>');
@@ -62,6 +69,8 @@ app.use('/monuments', monumentsRouter);
 app.use('/historicalLocation', historicalLocationRouter);
 app.use('/willVisit', willVisitRouter);
 app.use('/visited', visitedRouter);
+app.use('/api', require('./routes/upload'));
+
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);

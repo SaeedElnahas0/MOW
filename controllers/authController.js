@@ -101,16 +101,16 @@ const updateUser = async (req, res) => {
     })
 };
 
-const updatePhoto = async (req, res) => {
-    const user = await User.findOneAndUpdate({ _id: req.params.id }, req.body, {
-        new: true,
-        runValidators: true,
-    });
-    if (!user) {
-        throw new CustomError.NotFoundError(`No user with id : ${user}`);
-    }
-    res.status(StatusCodes.OK).json({ msg: 'Success! photo updated.' });
-};
+// const updatePhoto = async (req, res) => {
+//     const user = await User.findOneAndUpdate({ _id: req.params.id }, req.body, {
+//         new: true,
+//         runValidators: true,
+//     });
+//     if (!user) {
+//         throw new CustomError.NotFoundError(`No user with id : ${user}`);
+//     }
+//     res.status(StatusCodes.OK).json({ msg: 'Success! photo updated.' });
+// };
 
 //delete user
 const deleteUser = async (req, res) => {
@@ -124,6 +124,5 @@ module.exports = {
     getAllUsers,
     getSingleUser,
     updateUser,
-    updatePhoto,
     deleteUser
 }

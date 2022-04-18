@@ -17,7 +17,8 @@ const register = async (req, res) => {
             gender: user.gender, 
             job: user.job, 
             mobile: user.mobile, 
-            address: user.address 
+            address: user.address,
+            profilePic: user.profilePic 
         }, token 
     })
 }

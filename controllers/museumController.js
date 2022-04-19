@@ -20,7 +20,7 @@ const getAllMuseums = async (req, res) => {
     }
     let result = Museum.find(queryObject);
     const museums = await result;
-    res.status(StatusCodes.OK).json({ count: museums.length, museums });
+    res.status(StatusCodes.OK).json({  museums });
 };
 
 const getSingleMuseum = async (req, res) => {

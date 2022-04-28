@@ -26,6 +26,10 @@ const monumentsSchema = new mongoose.Schema(
             type: String,
             required: [true, 'Please provide monuments ticket'],
         },
+        type: {
+            type: String,
+            required: [true, 'Please provide monuments type'],
+        }
     },
     { timestamps: true }
 );

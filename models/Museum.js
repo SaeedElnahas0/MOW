@@ -33,6 +33,34 @@ const museumSchema = new mongoose.Schema(
         instructions: {
             type: String,
             required: [true, 'Please provide museum instructions'],
+        },
+        sketching: {
+            type: String,
+            required: [true, 'Please provide museum sketching'],
+        },
+        last_tickets: {
+            type: String,
+            required: [true, 'Please provide museum last tickets'],
+        },
+        free_tickets: {
+            type: String,
+            required: [true, 'Please provide museum free tickets'],
+        },
+        photo_instructions: {
+            type: String,
+            required: [true, 'Please provide museum photo instructions'],
+        },
+        photo_price: {
+            type: String,
+            required: [true, 'Please provide museum photo price'],
+        },
+        emergency: {
+            type: String,
+            required: [true, 'Please provide museum emergency'],
+        },
+        type: {
+            type: String,
+            required: [true, 'Please provide museum type'],
         }
     },
     { timestamps: true }

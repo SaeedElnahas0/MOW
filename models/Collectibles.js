@@ -18,6 +18,10 @@ const CollectiblesSchema = new mongoose.Schema(
             type: String,
             required: [true, 'Please provide collectibles location'],
         },
+        type: {
+            type: String,
+            required: [true, 'Please provide collectibles type'],
+        }
     },    
     { timestamps: true }
 );

@@ -26,10 +26,14 @@ const historicalLocationSchema = new mongoose.Schema(
             type: String,
             required: [true, 'Please provide Historical Location ticket'],
         },
-        mounments: {
-            type: String,
-            required: [true, 'Please provide Historical Location mounments'],
+        gallery: {
+            type: Array,
+            required: [true, 'Please provide Historical Location gallery'],
         },
+        type: {
+            type: String,
+            required: [true, 'Please provide Historical Location type'],
+        }
     },
     { timestamps: true }
 );

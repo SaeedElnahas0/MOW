@@ -10,7 +10,7 @@ const historicalSchema = new mongoose.Schema(
             type: String,
             required: [true, 'Please provide historical photo'],
         },
-        date: {
+        period_time: {
             type: String,
             required: [true, 'Please provide historical date'],
         },

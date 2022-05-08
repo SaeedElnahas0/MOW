@@ -18,6 +18,7 @@ const register = async (req, res) => {
             job: user.job, 
             mobile: user.mobile, 
             address: user.address,
+            role: user.role,
             profilePic: user.profilePic 
         }, token 
     })
@@ -49,6 +50,7 @@ const login = async (req, res) => {
             job: user.job, 
             mobile: user.mobile, 
             address: user.address,
+            role: user.role,
             profilePic: user.profilePic
         }, token 
     })
@@ -97,7 +99,7 @@ const updateUser = async (req, res) => {
             country: user.country, 
             gender: user.gender, 
             job: user.job, 
-            mobile: user.mobile, 
+            mobile: user.mobile,
             address: user.address 
         }, token 
     })

@@ -4,23 +4,23 @@ const sunkenMonumentsSchema = new mongoose.Schema(
     {
         name: {
             type: String,
-            required: [true, 'Please provide sunken monument name'],
+            //required: [true, 'Please provide sunken monument name'],
         },
         photo: {
             type: String,
-            required: [true, 'Please provide sunken monument photo'],
+            //required: [true, 'Please provide sunken monument photo'],
         },
         information: {
             type: String,
-            required: [true, 'Please provide sunken monument information'],
+            //required: [true, 'Please provide sunken monument information'],
         },
         location: {
             type: String,
-            required: [true, 'Please provide sunken monument location'],
+            //required: [true, 'Please provide sunken monument location'],
         },
         gallery: {
             type: Array,
-            required: [true, 'Please provide sunken monument gallery'],
+            //required: [true, 'Please provide sunken monument gallery'],
         },
     },    
     { timestamps: true }

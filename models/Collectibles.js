@@ -4,23 +4,23 @@ const CollectiblesSchema = new mongoose.Schema(
     {
         name: {
             type: String,
-            required: [true, 'Please provide collectibles name'],
+            //required: [true, 'Please provide collectibles name'],
         },
         photo: {
             type: String,
-            required: [true, 'Please provide collectibles photo'],
+            //required: [true, 'Please provide collectibles photo'],
         },
         information: {
             type: String,
-            required: [true, 'Please provide collectibles information'],
+            //required: [true, 'Please provide collectibles information'],
         },
         location: {
             type: String,
-            required: [true, 'Please provide collectibles location'],
+            //required: [true, 'Please provide collectibles location'],
         },
         type: {
             type: String,
-            required: [true, 'Please provide collectibles type'],
+            //required: [true, 'Please provide collectibles type'],
         }
     },    
     { timestamps: true }

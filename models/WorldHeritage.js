@@ -5,19 +5,19 @@ const WorldHeritageSchema = new mongoose.Schema(
     {
         name: {
             type: String,
-            required: [true, 'Please provide World Heritage name'],
+            //required: [true, 'Please provide World Heritage name'],
         },
         photo: {
             type: String,
-            required: [true, 'Please provide World Heritage photo'],
+            //required: [true, 'Please provide World Heritage photo'],
         },
         information: {
             type: String,
-            required: [true, 'Please provide World Heritage information'],
+            //required: [true, 'Please provide World Heritage information'],
         },
         gallery: {
             type: Array,
-            required: [true, 'Please provide World Heritage gallery'],
+            //required: [true, 'Please provide World Heritage gallery'],
         },
     },    
     { timestamps: true }

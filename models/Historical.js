@@ -4,19 +4,19 @@ const historicalSchema = new mongoose.Schema(
     {
         name: {
             type: String,
-            required: [true, 'Please provide historical name'],
+            //required: [true, 'Please provide historical name'],
         },
         photo: {
             type: String,
-            required: [true, 'Please provide historical photo'],
+            //required: [true, 'Please provide historical photo'],
         },
         period_time: {
             type: String,
-            required: [true, 'Please provide historical date'],
+            //required: [true, 'Please provide historical date'],
         },
         information: {
             type: String,
-            required: [true, 'Please provide historical information'],
+            //required: [true, 'Please provide historical information'],
         },
     },
     { timestamps: true }

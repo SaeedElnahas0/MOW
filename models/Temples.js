@@ -4,31 +4,31 @@ const templesSchema = new mongoose.Schema(
     {
         name: {
             type: String,
-            required: [true, 'Please provide temple name'],
+            //required: [true, 'Please provide temple name'],
         },
         Photo: {
             type: String,
-            required: [true, 'Please provide temple photo'],
+            //required: [true, 'Please provide temple photo'],
         },
         information: {
             type: String,
-            required: [true, 'Please provide temple information'],
+            //required: [true, 'Please provide temple information'],
         },
         location: {
             type: String,
-            required: [true, 'Please provide temple location'],
+            //required: [true, 'Please provide temple location'],
         },
         visiting_dates: {
             type: String,
-            required: [true, 'Please provide temple visiting_dates'],
+            //required: [true, 'Please provide temple visiting_dates'],
         },
         tickets: {
             type: String,
-            required: [true, 'Please provide temple ticket'],
+            //required: [true, 'Please provide temple ticket'],
         },
         type: {
             type: String,
-            required: [true, 'Please provide temple type'],
+            //required: [true, 'Please provide temple type'],
         }
     },
     { timestamps: true }

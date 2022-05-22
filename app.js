@@ -32,6 +32,7 @@ const historicalLocationRouter = require('./routes/historicalLocation');
 const templesRouter = require('./routes/temples');
 const tombsRouter = require('./routes/tombs');
 const beachRouter = require('./routes/beach');
+const hotelRouter = require('./routes/hotel');
 const willVisitRouter = require('./routes/willVisit');
 const visitedRouter = require('./routes/visited');
 
@@ -73,6 +74,7 @@ app.use('/historicalLocation', historicalLocationRouter);
 app.use('/temples', templesRouter);
 app.use('/tombs', tombsRouter);
 app.use('/beaches', beachRouter);
+app.use('/hotels', hotelRouter);
 app.use('/willVisit', willVisitRouter);
 app.use('/visited', visitedRouter);
 app.use('/api', require('./routes/upload'));

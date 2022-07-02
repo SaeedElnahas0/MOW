@@ -62,7 +62,7 @@ const museumSchema = new mongoose.Schema(
             type: String,
             //required: [true, 'Please provide museum type'],
         },
-        like: {
+        counter: {
             type: Number,
             default: 0
         }

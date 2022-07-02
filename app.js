@@ -49,9 +49,9 @@ const errorHandlerMiddleware = require('./middleware/error-handler');
 // );
 
 app.use(helmet());
-app.use(cors({
-    origin: "*"
-}));
+// app.use(cors({
+//     origin: "*"
+// }));
 app.use(xss());
 app.use(express.urlencoded({ extended: true }));
 
@@ -93,9 +93,9 @@ const start = async () => {
         );
         const io=require("socket.io")(server,{
             pingTimeout: 60000,
-            // cors: {
-            // origin: "*",
-            // },
+            cors: {
+            origin: "http://localhost:3000",
+            },
         })
 
         io.on("connection",(socket)=>{

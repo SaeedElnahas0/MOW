@@ -49,9 +49,9 @@ const errorHandlerMiddleware = require('./middleware/error-handler');
 // );
 
 app.use(helmet());
-// app.use(cors({
-//     origin: "*"
-// }));
+app.use(cors({
+    origin: "*"
+}));
 app.use(xss());
 app.use(express.urlencoded({ extended: true }));
 

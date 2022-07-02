@@ -57,7 +57,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 app.get('/', (req, res) => {
-    res.send('<h1>Saeed</h1>');
+    res.send('<h1>Saeed Elnahas</h1>');
 });
 
 app.use(express.static(path.join(__dirname, 'profileImage')));
@@ -100,12 +100,7 @@ const start = async () => {
 
         io.on("connection",(socket)=>{
             console.log("connect")
-            // setup used To create new socket
-            socket.on('setup',(userData)=>{
-            socket.join(userData._id);
-            console.log("userData")
-            socket.emit("connected")
-        })
+          
     })
 
     } catch (error) {

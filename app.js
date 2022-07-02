@@ -88,9 +88,26 @@ const port = process.env.PORT || 3000;
 const start = async () => {
     try {
         await connectDB(process.env.MONGO_URI);
-        app.listen(port, () =>
+        const server = app.listen(port, () =>
             console.log(`Server is listening on port ${port}...`)
         );
+        const io=require("socket.io")(server,{
+            pingTimeout: 60000,
+            cors: {
+            origin: "http://localhost:3000",
+            },
+        })
+
+        io.on("connection",(socket)=>{
+            console.log("connect")
+            // setup used To create new socket
+            socket.on('setup',(userData)=>{
+            socket.join(userData._id);
+            console.log(userData)
+            socket.emit("connected")
+        })
+    })
+
     } catch (error) {
         console.log(error);
     }

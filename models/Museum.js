@@ -61,6 +61,10 @@ const museumSchema = new mongoose.Schema(
         type: {
             type: String,
             //required: [true, 'Please provide museum type'],
+        },
+        like: {
+            type: Number,
+            default: 0
         }
     },
     { timestamps: true }

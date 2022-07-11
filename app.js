@@ -35,6 +35,7 @@ const beachRouter = require('./routes/beach');
 const hotelRouter = require('./routes/hotel');
 const willVisitRouter = require('./routes/willVisit');
 const visitedRouter = require('./routes/visited');
+const rateRouter = require('./routes/rate');
 
 // error handler
 const notFoundMiddleware = require('./middleware/not-found');
@@ -77,6 +78,7 @@ app.use('/beaches', beachRouter);
 app.use('/hotels', hotelRouter);
 app.use('/willVisit', willVisitRouter);
 app.use('/visited', visitedRouter);
+app.use('/rates', rateRouter);
 app.use('/api', require('./routes/upload'));
 
 

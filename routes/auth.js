@@ -6,7 +6,9 @@ const {
     getAllUsers, 
     getSingleUser, 
     updateUser,
-    deleteUser 
+    deleteUser,
+    forgetPassword,
+    resetPassword
 } = require('../controllers/authController');
 
 router.post('/register', register);
@@ -15,5 +17,7 @@ router.get('/', getAllUsers);
 router.get('/:id', getSingleUser);
 router.patch('/updateuser/:id',updateUser);
 router.delete('/:id', deleteUser);
+router.post('/forgetpassword',  forgetPassword);
+router.patch('/resetpassword',  resetPassword);
 
 module.exports = router;

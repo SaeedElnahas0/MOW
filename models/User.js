@@ -58,7 +58,10 @@ const userSchema = new mongoose.Schema({
         enum: ['admin', 'user'],
         default: 'user',
     },
-});
+},
+{ timestamps: true }
+    
+);
 
 //pre middleware executed one after another when each middleware calls
 userSchema.pre('save', async function () {

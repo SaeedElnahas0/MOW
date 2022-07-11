@@ -108,8 +108,34 @@ const updateUser = async (req, res) => {
 //delete user
 const deleteUser = async (req, res) => {
     const user = await User.findByIdAndDelete({ _id: req.params.id });
-    res.status(StatusCodes.CREATED).json({ msg: 'Success! User Deleted.' })
+    res.status(StatusCodes.OK).json({ msg: 'Success! User Deleted.' })
 }
+
+//forget password
+const forgetPassword = async (req, res) => {
+    const { email } = req.body;
+    const user = await User.findOne({ email: email });
+    if (!user) return res.status(400).json({ msg: "User Not Found" });
+    res.status(StatusCodes.OK).json({ msg: 'Success!' })
+};
+
+//reset password
+const resetPassword = async (req, res) => {
+    const { newPassword, confirmPassword, email} = req.body;
+    if (!newPassword || !confirmPassword ) {
+        throw new CustomError.BadRequestError('Please provide all values');
+    }
+    const user = await User.findOne({ email });
+  
+    if (req.body.newPassword !== req.body.confirmPassword) {
+      return res
+        .status(400)
+        .json({ msg: "Password Must be Match ConfirmPassword" });
+    }
+    user.password = newPassword;
+    await user.save();
+    res.status(StatusCodes.OK).json({msg: 'password reset success'})
+};
 
 module.exports = {
     register,
@@ -117,5 +143,7 @@ module.exports = {
     getAllUsers,
     getSingleUser,
     updateUser,
-    deleteUser
+    deleteUser,
+    forgetPassword,
+    resetPassword
 }

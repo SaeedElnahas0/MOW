@@ -9,8 +9,7 @@ const eventSchema = new mongoose.Schema(
             type: String,
         },
         Date: {
-            type: Date,
-            default: Date.now
+            type: String,
         },
         Information: {
             type: String,
@@ -21,7 +20,7 @@ const eventSchema = new mongoose.Schema(
         gallery: {
             type: Array,
         }
-    },
+    }, 
 );
 
 module.exports = mongoose.model('Event', eventSchema);

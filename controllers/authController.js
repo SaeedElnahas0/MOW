@@ -115,7 +115,7 @@ const deleteUser = async (req, res) => {
 const forgetPassword = async (req, res) => {
     const { email } = req.body;
     const user = await User.findOne({ email: email });
-    if (!user) return res.status(500).json({ msg: "User Not Found" });
+    if (!user) return res.status(200).json({ msg: "User Not Found" });
     res.status(StatusCodes.OK).json({ msg: 'Success!' })
 };
 

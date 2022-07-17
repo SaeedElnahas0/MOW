@@ -33,10 +33,10 @@ const templesRouter = require('./routes/temples');
 const tombsRouter = require('./routes/tombs');
 const beachRouter = require('./routes/beach');
 const hotelRouter = require('./routes/hotel');
+const blogRouter = require('./routes/blogs');
 const eventRouter = require('./routes/event');
 const willVisitRouter = require('./routes/willVisit');
 const visitedRouter = require('./routes/visited');
-const rateRouter = require('./routes/rate');
 
 // error handler
 const notFoundMiddleware = require('./middleware/not-found');
@@ -78,9 +78,9 @@ app.use('/tombs', tombsRouter);
 app.use('/beaches', beachRouter);
 app.use('/events', eventRouter);
 app.use('/hotels', hotelRouter);
+app.use('/blogs', blogRouter);
 app.use('/willVisit', willVisitRouter);
 app.use('/visited', visitedRouter);
-app.use('/rates', rateRouter);
 app.use('/api', require('./routes/upload'));
 
 

@@ -35,6 +35,7 @@ const beachRouter = require('./routes/beach');
 const hotelRouter = require('./routes/hotel');
 const blogRouter = require('./routes/blogs');
 const eventRouter = require('./routes/event');
+const formRouter = require('./routes/form');
 const willVisitRouter = require('./routes/willVisit');
 const visitedRouter = require('./routes/visited');
 
@@ -79,6 +80,7 @@ app.use('/beaches', beachRouter);
 app.use('/events', eventRouter);
 app.use('/hotels', hotelRouter);
 app.use('/blogs', blogRouter);
+app.use('/forms', formRouter);
 app.use('/willVisit', willVisitRouter);
 app.use('/visited', visitedRouter);
 app.use('/api', require('./routes/upload'));

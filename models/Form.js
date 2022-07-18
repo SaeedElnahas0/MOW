@@ -2,6 +2,11 @@ const mongoose = require('mongoose');
 
 const formSchema = new mongoose.Schema(
     {
+        user: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
+            required: true
+        },
         age: {
             type: Number
         },
@@ -84,15 +89,15 @@ const formSchema = new mongoose.Schema(
             type: String,
             enum: ['yes', 'no'],
         },
-        last_year : {
+        last_year_trip : {
             type: Number,
             default: 0
         },
-        last_place : {
+        last_place_trip: {
             type: String,
             default: 'no'
         },
-        future_place : {
+        future_place_trip : {
             type: String,
             default: 'no'
         },

@@ -9,7 +9,10 @@ const createForm = async (req, res) => {
 
 const getAllForms = async (req, res) => {
     const form = await Form.find({});
-    res.status(StatusCodes.OK).json({ form });
+    res.status(StatusCodes.OK).json({ 
+        id: this.Form._id, 
+        name: this.Form.age,
+     });
 };
 
 const getSingleForm = async (req, res) => {

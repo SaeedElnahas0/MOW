@@ -14,15 +14,15 @@ const formSchema = new mongoose.Schema(
         },
         city: {
             type: String,
-            default: 'no'
+            default: 'No'
         },
         category : {
             type: String,
-            default: 'no'
+            default: 'No'
         },
         beach : {
             type: String,
-            default: 'no'
+            default: 'No'
         },
         beach_Rate : {
             type: Number,
@@ -30,7 +30,7 @@ const formSchema = new mongoose.Schema(
         },
         historical_location : {
             type: String,
-            default: 'no'
+            default: 'No'
         },
         historical_location_Rate : {
             type: Number,
@@ -38,7 +38,7 @@ const formSchema = new mongoose.Schema(
         },
         hotel : {
             type: String,
-            default: 'no'
+            default: 'No'
         },
         hotel_Rate : {
             type: Number,
@@ -46,7 +46,7 @@ const formSchema = new mongoose.Schema(
         },
         monuments : {
             type: String,
-            default: 'no'
+            default: 'No'
         },
         monuments_Rate : {
             type: Number,
@@ -54,7 +54,7 @@ const formSchema = new mongoose.Schema(
         },
         museum : {
             type: String,
-            default: 'no'
+            default: 'No'
         },
         museum_Rate : {
             type: Number,
@@ -62,7 +62,7 @@ const formSchema = new mongoose.Schema(
         },
         temple : {
             type: String,
-            default: 'no'
+            default: 'No'
         },
         temple_Rate : {
             type: Number,
@@ -70,7 +70,7 @@ const formSchema = new mongoose.Schema(
         },
         tomb : {
             type: String,
-            default: 'no'
+            default: 'No'
         },
         tomb_Rate : {
             type: Number,
@@ -78,7 +78,7 @@ const formSchema = new mongoose.Schema(
         },
         world_heritage : {
             type: String,
-            default: 'no'
+            default: 'No'
         },
         world_heritage_Rate : {
             type: Number,
@@ -86,7 +86,7 @@ const formSchema = new mongoose.Schema(
         },
         visited_Egypt : {
             type: String,
-            enum: ['yes', 'no'],
+            enum: ['Yes', 'No'],
         },
         last_year_trip : {
             type: Number,
@@ -94,11 +94,11 @@ const formSchema = new mongoose.Schema(
         },
         last_place_trip: {
             type: String,
-            default: 'no'
+            default: 'No'
         },
         future_place_trip : {
             type: String,
-            default: 'no'
+            default: 'No'
         },
         money_last_trip: {
             type: Number,
@@ -120,15 +120,15 @@ const formSchema = new mongoose.Schema(
         },
         love_Egypt : {
             type: String,
-            enum: ['yes', 'no', 'maybe'],
+            enum: ['Yes', 'No', 'Maybe'],
         },
         Egypt : {
             type: String,
-            enum: ['yes', 'no', 'maybe'],
+            enum: ['Yes', 'No', 'Maybe'],
         },
         advise_others : {
             type: String,
-            enum: ['yes', 'no', 'maybe'],
+            enum: ['Yes', 'No', 'Maybe'],
         },
         tourism_Rate : {
             type: Number,

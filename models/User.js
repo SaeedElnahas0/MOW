@@ -26,11 +26,11 @@ const userSchema = new mongoose.Schema({
     },
     age: {
         type: String,
-        required: [true, 'Please provide age']
+        // required: [true, 'Please provide age']
     },
     country: {
         type: String,
-        required: [true, 'Please provide country']
+        // required: [true, 'Please provide country']
     },
     gender: {
         type: String,
@@ -38,15 +38,15 @@ const userSchema = new mongoose.Schema({
     },
     job: {
         type: String,
-        required: [true, 'Please provide job']
+        // required: [true, 'Please provide job']
     },
     mobile: {
         type: String,
-        required: [true, 'Please provide mobile']
+        // required: [true, 'Please provide mobile']
     },
     address: {
         type: String,
-        required: [true, 'Please provide address']
+        // required: [true, 'Please provide address']
     },
     // profilePic: {
     //     type: String,

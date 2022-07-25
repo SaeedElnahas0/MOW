@@ -73,8 +73,8 @@ const getSingleUser = async (req, res) => {
 
 //updata user name
 const updateUser = async (req, res) => {
-    const { email, name, oldPassword, newPassword } = req.body;
-    if (!email || !name || !oldPassword || !newPassword) {
+    const { email, name, oldPassword, newPassword, age, country, gender, job, mobile, address } = req.body;
+    if (!email || !name || !oldPassword || !newPassword || !age || !country || !gender || !job || !mobile || !address) {
         throw new CustomError.BadRequestError('Please provide all values');
     }
     const user = await User.findOne({ _id: req.params.id });
@@ -86,6 +86,12 @@ const updateUser = async (req, res) => {
     user.email = email;
     user.name = name;
     user.password = newPassword;
+    user.age = age;
+    user.country = country;
+    user.gender = gender;
+    user.job = job;
+    user.mobile = mobile;
+    user.address = address;
 
     await user.save();
 
